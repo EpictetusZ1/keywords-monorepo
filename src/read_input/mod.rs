@@ -9,7 +9,7 @@ pub fn read_input(path: &str) {
         Ok(contents) => contents,
         Err(_) => {
             println!("Error reading file");
-            return;
+            return
         }
     };
 
