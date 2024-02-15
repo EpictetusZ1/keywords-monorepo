@@ -1,7 +1,7 @@
 use std::fs;
 
 pub fn read_input(path: &str) -> String {
-    /// Read in a .txt file
+    // Read in a .txt file
     let contents = fs::read_to_string(path);
 
     let contents = match contents {
