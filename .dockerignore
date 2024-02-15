@@ -1,0 +1,21 @@
+# General
+.git
+.gitignore
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+
+# Node-specific
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Rust-specific
+/target
+**/*.rs.bk
+
+# Editor directories and files
+.vscode
+.idea
+*.swp
+*.swo

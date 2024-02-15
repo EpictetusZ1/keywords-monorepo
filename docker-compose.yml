@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  rust-api:
+    container_name: rust-api
+    build:
+      context: .
+      dockerfile: apps/rust-api/Dockerfile
+    ports:
+      - "8000:8000"
+  next-app:
+    container_name: next-js
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "3000:3000"
+#    environment:
+#      - NEXT_PUBLIC_RUST_API_URL=http://rust-api:8000
+#  postgres:
+#    image: postgres:13
+#    environment:
+#      POSTGRES_DB: mydatabase
+#      POSTGRES_USER: user
+#      POSTGRES_PASSWORD: password
+#    volumes:
+#      - postgres-data:/var/lib/postgresql/data
+#volumes:
+#  postgres-data:
+

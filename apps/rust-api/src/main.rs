@@ -8,20 +8,21 @@ use std::fs;
 
 // TODO: Add 3 Sample job descriptions in.
 fn main() {
-    let input =  read_input("original/Jack_Heaton_CV.html");
-    let test = run();
-    let data = test.unwrap();
-    let one = &data[0];
-
-    let mut keywords = KWList::new();
-    keywords.find_and_count_keywords(&one);
-    keywords.prepare_keywords_for_replacement();
-    keywords.print_keywords();
-
-    let cleaned = clean_text(&input);
-    let resume = Replace::new(cleaned, keywords);
-    // remove html tags
-    println!("{}", resume.replace_keywords());
+    println!("RUST FILE RUNNING");
+    // let input =  read_input("original/Jack_Heaton_CV.html");
+    // let test = run();
+    // let data = test.unwrap();
+    // let one = &data[0];
+    //
+    // let mut keywords = KWList::new();
+    // keywords.find_and_count_keywords(&one);
+    // keywords.prepare_keywords_for_replacement();
+    // keywords.print_keywords();
+    //
+    // let cleaned = clean_text(&input);
+    // let resume = Replace::new(cleaned, keywords);
+    // // remove html tags
+    // println!("{}", resume.replace_keywords());
 }
 
 fn clean_text(input: &str) -> String {
