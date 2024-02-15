@@ -55,7 +55,7 @@ impl KWList {
 
         Self {
             keywords,
-            total_replacements: 100,
+            total_replacements: 10,
         }
     }
 
@@ -70,7 +70,7 @@ impl KWList {
     pub fn find_and_count_keywords(&mut self, text: &str) {
         let words = text.split_whitespace().collect::<Vec<&str>>();
         let mut pos = 0;
-        for (i, word) in words.iter().enumerate() {
+        for (_i, word) in words.iter().enumerate() {
             let normalized_word = Self::normalize(word);
             if let Some(kw_instance) = self.keywords.get_mut(&normalized_word) {
                 if !kw_instance.canonical.contains(word) {

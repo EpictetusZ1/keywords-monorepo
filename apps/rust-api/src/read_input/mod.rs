@@ -1,8 +1,7 @@
-use scraper::Html;
 use std::fs;
 
-
 pub fn read_input(path: &str) -> String {
+    /// Read in a .txt file
     let contents = fs::read_to_string(path);
 
     let contents = match contents {
@@ -13,10 +12,5 @@ pub fn read_input(path: &str) -> String {
         }
     };
 
-    let document = Html::parse_document(&contents);
-    let body = document.select(&scraper::Selector::parse("body").unwrap()).next().unwrap();
-
-    // println!("Contents: {:?}", body.inner_html());
-    // return body.inner_html();
-    return body.inner_html()
+    contents
 }

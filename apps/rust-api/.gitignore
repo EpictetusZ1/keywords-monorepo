@@ -1,7 +1,7 @@
 /target
 .idea/
-/original
-/original/**
+/input
+/input/**
 **.html
 /job_desc_list
 **.csv
