@@ -7,14 +7,11 @@ use crate::kw_list::input_list::keyword_input;
 
 
 pub fn connect_local() -> Result<Client, Box<dyn error::Error>> {
-    dotenv().ok(); // Load env variables
+    dotenv().ok();
 
-    // Use environment variables that match your docker-compose.yml configuration
     let db_connection_string = env::var("DB_CONNECTION_DOCKER")
         .expect("DB_CONNECTION_DOCKER must be set in .env file");
-    // Format: "host=localhost user=postgres password=whatever dbname=keywords_data"
 
-    // Connect without TLS since it's a local Docker connection
     Ok(Client::connect(&db_connection_string, NoTls)?)
 }
 
