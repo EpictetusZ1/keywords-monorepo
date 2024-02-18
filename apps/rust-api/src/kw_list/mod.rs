@@ -1,4 +1,4 @@
-mod input_list;
+pub mod input_list;
 
 use std::collections::{HashMap, HashSet};
 
@@ -39,7 +39,6 @@ impl KWInstance {
 #[derive(Debug)]
 pub struct KWList {
     pub keywords: HashMap<String, KWInstance>, // Maps canonical forms to KWInstance
-    total_replacements: usize,
 }
 
 impl KWList {
@@ -55,7 +54,6 @@ impl KWList {
 
         Self {
             keywords,
-            total_replacements: 10,
         }
     }
 

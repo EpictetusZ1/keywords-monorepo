@@ -5,12 +5,11 @@ use keywords::replace::Replace;
 use keywords::database;
 
 fn main() {
+    let mut my_conn = database::connect_local().expect("Failed to connect to the database");
+    database::create_table(&mut my_conn);
+    database::seed_db(&mut my_conn);
+    database::read_db(&mut my_conn);
 
-    let my_conn = database::connect();
-    match my_conn {
-        Ok(_) => println!("Connection to database established."),
-        Err(e) => println!("Error connecting to database: {:?}", e)
-    }
     let input =  read_input("input/1.txt");
     let test = run();
     let data = test.unwrap();
