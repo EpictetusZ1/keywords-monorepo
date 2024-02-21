@@ -772,6 +772,7 @@ dependencies = [
  "postgres",
  "postgres-openssl",
  "serde",
+ "serde_json",
 ]
 
 [[package]]
